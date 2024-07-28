@@ -1,0 +1,16 @@
+cradle:
+  stack:
+    - path: "./Setup.hs"
+      config: { cradle: { stack: {} } }
+
+    - path: "./src"
+      component: "haskell-sandbox:lib"
+
+    - path: "././app/FizzBuzzMain.hs"
+      component: "haskell-sandbox:exe:fizzBuzz"
+
+    - path: "././app/Main.hs"
+      component: "haskell-sandbox:exe:sample"
+
+    - path: "./test"
+      component: "haskell-sandbox:test:haskell-sandbox-test"
