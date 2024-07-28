@@ -1,4 +1,4 @@
-module Main (main) where
+module FizzBuzzMain (main) where
 
 import FizzBuzz (fizzBuzz)
 

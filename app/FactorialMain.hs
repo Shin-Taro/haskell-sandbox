@@ -1,4 +1,4 @@
-module Main (main) where
+module FactorialMain (main) where
 
 import Factorial (factorial)
 
