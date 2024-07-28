@@ -1,6 +1,6 @@
 module Main (main) where
 
-import FizzBuzz
+import FizzBuzz ( fizzBuzz )
 
 main :: IO ()
 main = do

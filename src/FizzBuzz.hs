@@ -9,7 +9,7 @@ module FizzBuzz
 fizzBuzz :: Int -> String
 
 fizzBuzz x
-  | (mod x 15) == 0 = "FizzBuzz"
-  | (mod x 3) == 0 = "Fizz"
-  | (mod x 5) == 0 = "Buzz"
+  | mod x 15 == 0 = "FizzBuzz"
+  | mod x 3 == 0 = "Fizz"
+  | mod x 5 == 0 = "Buzz"
   | otherwise = show x
