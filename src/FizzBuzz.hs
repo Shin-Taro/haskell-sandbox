@@ -5,6 +5,7 @@ module FizzBuzz
 -- 3で割り切れる数に対しては、"Fizz"
 -- 5で割り切れる数に対しては、"Buzz"
 -- 3でも5でも割り切れる数に対しては"FizzBuzz"
+-- それ以外はその数をそのまま返す
 
 fizzBuzz :: Int -> String
 
