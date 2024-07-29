@@ -1,4 +1,4 @@
-module CalculatePoint (calculate) where
+module CalculatePoint (calculate, calculatePoint) where
 
 -- 3万点返し計算
 -- 30000を基準としてプラスマイナスを計算
@@ -31,21 +31,14 @@ calculate score = revalueRemainder (modThousands $ diffFromBase score) $ diffFro
 --    in if remainder > 5 then point + 1 else point
 
 -- おまけ
--- bonusByRanking :: Int -> Either String Int
--- bonusByRanking 1 = Right 30
--- bonusByRanking 2 = Right 10
--- bonusByRanking 3 = Right (-10)
--- bonusByRanking 4 = Right (-30)
--- bonusByRanking _ = Left "Invalid position"
+bonusByRanking :: Int -> Either String Int
+bonusByRanking 1 = Right 30
+bonusByRanking 2 = Right 10
+bonusByRanking 3 = Right (-10)
+bonusByRanking 4 = Right (-30)
+bonusByRanking _ = Left "Invalid position"
 
--- throwIfLeft :: Either String a -> a
--- throwIfLeft (Right x) = x
--- throwIfLeft (Left x) = error x
-
--- calculatePoint :: Int -> Int -> Int
--- calculatePoint position score
---   | position < 1 || position > 4 = error "Invalid position"
---   | otherwise =
---       let bonus = throwIfLeft $ bonusByRanking position
---           calculated = calculate score
---        in calculated + bonus
+calculatePoint :: Int -> Int -> Either String Int
+calculatePoint position score = do
+  bonus <- bonusByRanking position
+  return $ calculate score + bonus
