@@ -13,11 +13,9 @@ author:         Author name here
 maintainer:     example@example.com
 copyright:      2024 Author name here
 license:        BSD-3-Clause
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    CHANGELOG.md
 
 source-repository head
   type: git
@@ -25,6 +23,7 @@ source-repository head
 
 library
   exposed-modules:
+      CalculatePoint
       Factorial
       FizzBuzz
       Lib
@@ -37,6 +36,18 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+  default-language: Haskell2010
+
+executable calculatePoint
+  main-is: app/CalculatePointMain.hs
+  other-modules:
+      Paths_haskell_sandbox
+  autogen-modules:
+      Paths_haskell_sandbox
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N -main-is CalculatePointMain
+  build-depends:
+      base >=4.7 && <5
+    , haskell-sandbox
   default-language: Haskell2010
 
 executable factorial
