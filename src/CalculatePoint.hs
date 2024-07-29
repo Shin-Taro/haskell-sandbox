@@ -38,6 +38,11 @@ bonusByRanking 3 = Right (-10)
 bonusByRanking 4 = Right (-30)
 bonusByRanking _ = Left "Invalid position"
 
+-- Eitherを外す場合
+-- calculatePoint :: Int -> Int -> Int
+-- calculatePoint position score = either (const 0) (\bonus -> calculate (score + bonus)) (bonusByRanking position)
+
+-- Eitherをそのまま流す場合
 calculatePoint :: Int -> Int -> Either String Int
 calculatePoint position score = do
   bonus <- bonusByRanking position
