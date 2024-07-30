@@ -1,5 +1,7 @@
 module CalculatePoint (calculate, calculatePoint) where
 
+-- import Pipe ((|>))
+
 -- 3万点返し計算
 -- 30000を基準としてプラスマイナスを計算
 -- 1000点毎に1ポイントとして計算
@@ -15,12 +17,14 @@ diffFromBase :: Int -> Int
 diffFromBase score = score - 30000
 
 revalueRemainder :: Int -> Int -> Int
-revalueRemainder remainder score
+revalueRemainder score remainder
   | div remainder 100 > 5 = divThousands score + 1
   | otherwise = divThousands score
 
 calculate :: Int -> Int
-calculate score = revalueRemainder (modThousands $ diffFromBase score) $ diffFromBase score
+calculate score = revalueRemainder (diffFromBase score) (modThousands $ diffFromBase score)
+
+-- calculate score = diffFromBase score |> modThousands |> revalueRemainder (diffFromBase score)
 
 -- 手続き的に書いた場合
 -- calculate score =

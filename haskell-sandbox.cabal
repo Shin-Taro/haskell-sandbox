@@ -27,6 +27,7 @@ library
       Factorial
       FizzBuzz
       Lib
+      Pipe
   other-modules:
       Paths_haskell_sandbox
   autogen-modules:
