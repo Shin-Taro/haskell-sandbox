@@ -10,10 +10,6 @@ https://www.haskell.org/ghcup/install/#how-to-install の通り以下で install
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 ```
 
-install 出来たら recommended が入っているので、全部 latest にしておく。
-
-(latest じゃなくても多分動くし結局 ghc は 9.6.6 になる。正直よく分かってない。)
-
 #### install 中の選択肢
 
 - `P`があるやつは`P`で OK
