@@ -32,7 +32,7 @@ calculate score = revalueRemainder (modThousands $ diffFromBase score) $ diffFro
 
 -- おまけ
 bonusByRanking :: Int -> Either String Int
-bonusByRanking 1 = Right 30
+bonusByRanking 1 = Right 50
 bonusByRanking 2 = Right 10
 bonusByRanking 3 = Right (-10)
 bonusByRanking 4 = Right (-30)
